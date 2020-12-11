@@ -1,7 +1,6 @@
-const mergeSort = (left, right) => {
+const merge = (left, right) => {
   const result = []
   while (left.length && right.length) {
-    debugger
     if (left[0] < right[0]) {
       result.push(left.shift())
     } else {
@@ -16,7 +15,7 @@ const mergeSort = (left, right) => {
   }
   return result
 }
-const merge = (arr) => {
+const mergeSort = (arr) => {
   const len = arr.length
   if (len < 2) {
     return arr
@@ -24,7 +23,6 @@ const merge = (arr) => {
   const mid = Math.floor(len / 2)
   const left = arr.slice(0, mid)
   const right = arr.slice(mid)
-  return merge(mergeSort(left, right))
+  return merge(mergeSort(left), mergeSort(right))
 }
-merge([1, 123, 4, 21])
-// module.exports = merge
+module.exports = mergeSort

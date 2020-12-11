@@ -4,7 +4,7 @@ const baseBinarySearch = require('../../src/algorithm-api/BinarySearch')
 
 const arr = []
 let val
-for (let i = 0; i < 6; i++) {
+for (let i = 0; i < 100; i++) {
   if (Math.random() > 0.5) {
     val = Math.floor(Math.random() * 300)
   } else {
@@ -30,14 +30,18 @@ time1 = endTime - startTime
 
 startTime = new Date().getTime()
 const dataSorted = mergeSort(arr)
+let val1
 for (const item of arr) {
-  if (baseBinarySearch(dataSorted, -item)) {
+  val1 = baseBinarySearch(dataSorted, -item)
+  if (val1) {
     res.push(`${item}/${-item}`)
   }
 }
 endTime = new Date().getTime()
+debugger
 time2 = endTime - startTime
-console.log('23', time1 - time2)
+debugger
+console.dir('23', time1 - time2)
 // describe('3个整数之和为0的问题', () => {
 //   const arr = []
 //   let val
