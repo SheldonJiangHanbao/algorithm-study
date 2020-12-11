@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import baseBinarySearch from '../../src/algorithm-api/BinarySearch'
+import { baseBinarySearch } from '../../src/algorithm-api/BinarySearch'
 
 describe('测试二分查找方法', () => {
   it('在1到1000的数组中，查找60', () => {
